@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/api/products", productsRoutes);
-app.use("/api/users", usersRoutes);
+app.use("/products", productsRoutes);
+app.use("/users", usersRoutes);
 
 const PORT = process.env.PORT || config.get("port") || 8081;
 
