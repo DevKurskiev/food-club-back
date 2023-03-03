@@ -45,9 +45,11 @@ router.post("/login", async (req, res) => {
     : false;
   console.log(passwordIsRight);
 
-  res.send({
-    userId: passwordIsRight ? user.userId : null,
-    error: !passwordIsRight ? "Ваша почта и/или email введены неверно" : null,
+  res.status(200).jsoon({
+    userId: passwordIsRight ? user.userId : { message: null },
+    error: !passwordIsRight
+      ? { message: "Ваша почта и/или email введены неверно" }
+      : { message: null },
   });
 });
 
