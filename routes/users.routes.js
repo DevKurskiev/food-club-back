@@ -45,7 +45,7 @@ router.post("/login", async (req, res) => {
     : false;
   console.log(passwordIsRight);
 
-  res.status(200).jsoon({
+  res.status(200).json({
     userId: passwordIsRight ? user.userId : { message: null },
     error: !passwordIsRight
       ? { message: "Ваша почта и/или email введены неверно" }
